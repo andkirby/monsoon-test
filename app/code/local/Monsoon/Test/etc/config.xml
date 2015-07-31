@@ -33,6 +33,16 @@
                 </setup>
             </monsoon_test_setup>
         </resources>
+        <events>
+            <page_block_html_topmenu_gethtml_before>
+                <observers>
+                    <catalog_add_topmenu_items>
+                        <class>monsoon_test/observer</class>
+                        <method>addCatalogToTopmenuItems</method>
+                    </catalog_add_topmenu_items>
+                </observers>
+            </page_block_html_topmenu_gethtml_before>
+        </events>
     </global>
     <frontend>
         <layout>
