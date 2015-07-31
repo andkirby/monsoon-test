@@ -1,0 +1,33 @@
+#########################################################
+# Ignore Magento all files                              #
+#########################################################
+*.*
+/lib
+/mage
+/js/prototype
+/var
+/shell
+/vendor
+
+#########################################################
+# Update and uncomment lines below to exclude ignoring  #
+# module files.                                         #
+# Anyway fill free to add a required file by command:   #
+#     git add -f path/to/your.file                      #
+# To add excluding recursively please use example:      #
+#     !/path/to/your/dir/**                             #
+#########################################################
+
+# LAYOUT
+#!app/design/frontend/enterprise/opal/layout/name/module.xml
+
+
+# LOCALE
+#!app/design/frontend/enterprise/name/module/**/*
+
+# TEMPLATE
+#!app/design/frontend/enterprise/opal/template/name/module/**/*
+
+# CODE
+!app/code/local/Monsoon/**
+!app/etc/modules/Monsoon_Test.xml
