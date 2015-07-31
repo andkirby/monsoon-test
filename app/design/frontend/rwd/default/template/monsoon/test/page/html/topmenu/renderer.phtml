@@ -29,11 +29,9 @@ foreach ($children as $child) {
 
     //region Updated code to show simple label instead link
     if ($child->getIsNotLink()):
-        $html .= '<span class="'. $outermostClassCode .' '
-                 . $_hasChildren .'">'. $this->escapeHtml($this->__($child->getName())) .'</span>';
+        $html .= '<a class="'. $outermostClassCode .' '. $_hasChildren .'">'. $this->escapeHtml($this->__($child->getName())) .'</a>';
     else:
-        $html .= '<span class="'. $outermostClassCode .' '
-                 . $_hasChildren .'">'. $this->escapeHtml($this->__($child->getName())) .'</span>';
+        $html .= '<a href="'. $child->getUrl() .'" class="'. $outermostClassCode .' '. $_hasChildren .'">'. $this->escapeHtml($this->__($child->getName())) .'</a>';
     endif;
     //endregion
 
@@ -48,9 +46,9 @@ foreach ($children as $child) {
         $html .=     '<li class="level'. $nextChildLevel .' view-all">';
         //region Updated code to show simple label instead link
         if ($child->getIsNotLink()):
-            $html .=         '<span class="level'. $nextChildLevel .'">';
+            $html .=         '<a class="level'. $nextChildLevel .'">';
             $html .=             $this->__('View All') . ' ' . $this->escapeHtml($this->__($child->getName()));
-            $html .=         '</span>';
+            $html .=         '</a>';
         else:
             $html .=         '<a class="level'. $nextChildLevel .'" href="'. $child->getUrl() .'">';
             $html .=             $this->__('View All') . ' ' . $this->escapeHtml($this->__($child->getName()));
