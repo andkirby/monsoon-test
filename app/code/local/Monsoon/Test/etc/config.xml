@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Monsoon_Test>
+            <version>0.1.0</version>
+        </Monsoon_Test>
+    </modules>
+    <global>
+        <models>
+            <monsoon_test>
+                <class>Monsoon_Test_Model</class>
+                <resourceModel>monsoon_test_resource</resourceModel>
+            </monsoon_test>
+            <monsoon_test_resource>
+                <class>Monsoon_Test_Model_Resource</class>
+            </monsoon_test_resource>
+        </models>
+        <blocks>
+            <monsoon_test>
+                <class>Monsoon_Test_Block</class>
+            </monsoon_test>
+        </blocks>
+        <helpers>
+            <monsoon_test>
+                <class>Monsoon_Test_Helper</class>
+            </monsoon_test>
+        </helpers>
+        <resources>
+            <monsoon_test_setup>
+                <setup>
+                    <module>Monsoon_Test</module>
+                </setup>
+            </monsoon_test_setup>
+        </resources>
+    </global>
+</config>
