@@ -26,8 +26,10 @@
 #!app/design/frontend/enterprise/name/module/**/*
 
 # TEMPLATE
-#!app/design/frontend/enterprise/opal/template/name/module/**/*
+!app/design/frontend/rwd/default/template/monsoon/test/**
 
 # CODE
 !app/code/local/Monsoon/**
 !app/etc/modules/Monsoon_Test.xml
+
+
