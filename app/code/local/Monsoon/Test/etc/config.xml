@@ -29,6 +29,7 @@
             <monsoon_test_setup>
                 <setup>
                     <module>Monsoon_Test</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
                 </setup>
             </monsoon_test_setup>
         </resources>
@@ -41,5 +42,12 @@
                 </monsoon_test>
             </updates>
         </layout>
+        <category>
+            <collection>
+                <attributes>
+                    <is_not_link />
+                </attributes>
+            </collection>
+        </category>
     </frontend>
 </config>
