@@ -8,6 +8,10 @@ class Monsoon_Test_Model_Observer extends Mage_Catalog_Model_Observer
     /**
      * Recursively adds categories to top menu
      *
+     * This method do almost the same but added adding attribute is_not_link
+     * Take a look comments with "UPDATED" word.
+     *
+     * @see Mage_Catalog_Model_Observer::_addCategoriesToMenu()
      * @param Varien_Data_Tree_Node_Collection|array $categories
      * @param Varien_Data_Tree_Node $parentCategoryNode
      * @param Mage_Page_Block_Html_Topmenu $menuBlock
@@ -33,6 +37,9 @@ class Monsoon_Test_Model_Observer extends Mage_Catalog_Model_Observer
                 'id' => $nodeId,
                 'url' => Mage::helper('catalog/category')->getCategoryUrl($category),
                 'is_active' => $this->_isActiveMenuCategory($category),
+                /**
+                 * UPDATED: Added is_not_link attribute to use it in rendering
+                 */
                 'is_not_link' => $category->getIsNotLink()
             );
             $categoryNode = new Varien_Data_Tree_Node($categoryData, 'id', $tree, $parentCategoryNode);
