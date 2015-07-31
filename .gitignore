@@ -27,6 +27,7 @@
 
 # TEMPLATE
 !app/design/frontend/rwd/default/template/monsoon/test/**
+!app/design/frontend/rwd/default/layout/monsoon/test.xml
 
 # CODE
 !app/code/local/Monsoon/**

@@ -33,4 +33,13 @@
             </monsoon_test_setup>
         </resources>
     </global>
+    <frontend>
+        <layout>
+            <updates>
+                <monsoon_test>
+                    <file>monsoon/test.xml</file>
+                </monsoon_test>
+            </updates>
+        </layout>
+    </frontend>
 </config>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="catalog.topnav.renderer">
+            <action method="setTemplate">
+                <template>monsoon/test/page/html/topmenu/renderer.phtml</template>
+            </action>
+        </reference>
+    </default>
+</layout>
