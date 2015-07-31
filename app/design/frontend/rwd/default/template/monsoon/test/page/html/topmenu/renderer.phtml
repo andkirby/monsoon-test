@@ -27,8 +27,15 @@ foreach ($children as $child) {
 
     $html .= '<li '. $this->_getRenderedMenuItemAttributes($child) .'>';
 
-    $html .= '<a href="'. $child->getUrl() .'" class="'. $outermostClassCode .' '
-             . $_hasChildren .'">1111'. $this->escapeHtml($this->__($child->getName())) .'</a>';
+    //region Updated code to show simple label instead link
+    if ($child->getIsNotLink()):
+        $html .= '<span class="'. $outermostClassCode .' '
+                 . $_hasChildren .'">'. $this->escapeHtml($this->__($child->getName())) .'</span>';
+    else:
+        $html .= '<span class="'. $outermostClassCode .' '
+                 . $_hasChildren .'">'. $this->escapeHtml($this->__($child->getName())) .'</span>';
+    endif;
+    //endregion
 
     if (!empty($childrenWrapClass)) {
         $html .= '<div class="'. $childrenWrapClass .'">';
@@ -39,9 +46,17 @@ foreach ($children as $child) {
     if (!empty($_hasChildren)) {
         $html .= '<ul class="level'. $childLevel .'">';
         $html .=     '<li class="level'. $nextChildLevel .' view-all">';
-        $html .=         '<a class="level'. $nextChildLevel .'" href="'. $child->getUrl() .'">';
-        $html .=             $this->__('View All') . ' ' . $this->escapeHtml($this->__($child->getName()));
-        $html .=         '</a>';
+        //region Updated code to show simple label instead link
+        if ($child->getIsNotLink()):
+            $html .=         '<span class="level'. $nextChildLevel .'">';
+            $html .=             $this->__('View All') . ' ' . $this->escapeHtml($this->__($child->getName()));
+            $html .=         '</span>';
+        else:
+            $html .=         '<a class="level'. $nextChildLevel .'" href="'. $child->getUrl() .'">';
+            $html .=             $this->__('View All') . ' ' . $this->escapeHtml($this->__($child->getName()));
+            $html .=         '</a>';
+        endif;
+        //endregion
         $html .=     '</li>';
         $html .=     $this->render($child, $childrenWrapClass);
         $html .= '</ul>';
